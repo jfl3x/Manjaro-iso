@@ -48,15 +48,13 @@ jobs:
         with:
           access_token: ${{ github.token }}
       - name: image-build-upload
-        uses: Manjaro/manjaro-iso-action@v2.8
+        uses: Manjaro/manjaro-iso-action@main
         with:
           iso-profiles-repo: https://github.com/jfl3x/iso-profiles/
           edition: ${{ matrix.edition }}
           branch: ${{ matrix.branch }}
           scope: ${{ matrix.scope }}
           kernel: ${{ matrix.kernel }}
-          release-tag: ${{ needs.prepare-release.outputs.release_tag }}
-          additional-trusted-gpg: ${{ secrets.GPG_KEYID }}
       - name: rollback
         if: ${{ cancelled() }}
         run: |
