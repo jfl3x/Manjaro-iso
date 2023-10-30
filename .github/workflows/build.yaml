@@ -33,16 +33,17 @@ jobs:
       fail-fast: false
       matrix:
         experimental: [false]
-        edition: [gnome, i3, xfce, awesome]
+        # edition: [gnome, i3, xfce, awesome]
+        edition: [awesome]
         branch: [stable]
-        scope: [full]
-        # kernel:
-        #   - ${{ needs.prepare-release.outputs.mainline }}
-        #   - ${{ needs.prepare-release.outputs.longterm }}
-        #   - ${{ needs.prepare-release.outputs.stable }}
-        # include:
-        #   - kernel: ${{ needs.prepare-release.outputs.mainline }}
-        #     experimental: false
+        scope: [full, minimal]
+        kernel:
+          - ${{ needs.prepare-release.outputs.mainline }}
+          - ${{ needs.prepare-release.outputs.longterm }}
+          - ${{ needs.prepare-release.outputs.stable }}
+        include:
+          - kernel: ${{ needs.prepare-release.outputs.mainline }}
+            experimental: false
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
         with:
@@ -54,9 +55,8 @@ jobs:
           edition: ${{ matrix.edition }}
           branch: ${{ matrix.branch }}
           scope: ${{ matrix.scope }}
-          version: "21.20"
-          kernel: linux515
-          code-name: "Artemis"
+          kernel: ${{ matrix.kernel }}
+          release-tag: ${{ needs.prepare-release.outputs.release_tag }}
       - name: rollback
         if: ${{ cancelled() }}
         run: |
