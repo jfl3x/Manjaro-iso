@@ -39,7 +39,7 @@ jobs:
         kernel: 
           - ${{ needs.prepare-release.outputs.longterm }}
           - ${{ needs.prepare-release.outputs.stable }}
-          - ${{ needs.prepare-release.outputs.mainline }}
+          # - ${{ needs.prepare-release.outputs.mainline }}
         include:
           - kernel: ${{ needs.prepare-release.outputs.mainline }}
             experimental: false
