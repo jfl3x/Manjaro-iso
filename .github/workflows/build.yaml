@@ -33,16 +33,19 @@ jobs:
       fail-fast: false
       matrix:
         experimental: [false]
-        edition: [awesome]
+        edition: [gnome, plasma, xfce, awesome]
         branch: [stable]
         scope: [full]
+        # version: "21.0"
+        # kernel: linux510
+        # code-name: "Ornara"
         kernel:
           - ${{ needs.prepare-release.outputs.mainline }}
           - ${{ needs.prepare-release.outputs.longterm }}
           - ${{ needs.prepare-release.outputs.stable }}
         include:
           - kernel: ${{ needs.prepare-release.outputs.mainline }}
-            experimental: true
+            experimental: false
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
         with:
