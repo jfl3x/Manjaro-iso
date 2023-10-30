@@ -38,12 +38,8 @@ jobs:
         scope: [full, minimal]
         kernel: 
           - ${{ needs.prepare-release.outputs.longterm }}
-        include:
-          - edition: awesome
-            branch: unstable
-            scope: full
-            kernel: ${{ needs.prepare-release.outputs.stable }}
-            experimental: false
+          - ${{ needs.prepare-release.outputs.stable-pkg }}
+          - ${{ needs.prepare-release.outputs.mainline-pkg }}
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
         with:
@@ -52,7 +48,7 @@ jobs:
         run: |
           gpg --keyserver keys.openpgp.org --receive-keys ${{ secrets.GPG_KEYID }}
       - name: image-build-upload
-        uses: Manjaro/manjaro-iso-action@v2.9
+        uses: Manjaro/manjaro-iso-action@main
         with:
           iso-profiles-repo: https://github.com/jfl3x/iso-profiles
           edition: ${{ matrix.edition }}
