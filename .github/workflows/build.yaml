@@ -36,7 +36,6 @@ jobs:
         edition: [gnome, i3, xfce, awesome]
         branch: [stable]
         scope: [full]
-        kernel: linux510
         # kernel:
         #   - ${{ needs.prepare-release.outputs.mainline }}
         #   - ${{ needs.prepare-release.outputs.longterm }}
@@ -55,7 +54,9 @@ jobs:
           edition: ${{ matrix.edition }}
           branch: ${{ matrix.branch }}
           scope: ${{ matrix.scope }}
-          kernel: ${{ matrix.kernel }}
+          version: "21.20"
+          kernel: linux515
+          code-name: "Artemis"
       - name: rollback
         if: ${{ cancelled() }}
         run: |
