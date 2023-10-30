@@ -36,9 +36,7 @@ jobs:
         edition: [gnome, i3, xfce, awesome]
         branch: [stable]
         scope: [full]
-        version: "21.0"
         kernel: linux510
-        code-name: "Ornara"
         # kernel:
         #   - ${{ needs.prepare-release.outputs.mainline }}
         #   - ${{ needs.prepare-release.outputs.longterm }}
@@ -58,8 +56,6 @@ jobs:
           branch: ${{ matrix.branch }}
           scope: ${{ matrix.scope }}
           kernel: ${{ matrix.kernel }}
-          version: ${{ matrix.version }}
-          code-name: ${{ matrix.code-name }}
       - name: rollback
         if: ${{ cancelled() }}
         run: |
