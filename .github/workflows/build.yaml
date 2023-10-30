@@ -6,10 +6,13 @@ on:
     branches:
       - master
       - main
+  workflow_dispatch:
+  repository_dispatch:
+    types: [iso_profile_update]
 
 jobs:
   prepare-release:
-    runs-on: manjaro-20.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
         with:
@@ -26,37 +29,38 @@ jobs:
       stable: ${{ steps.receive.outputs.stable-pkg }}
       mainline: ${{ steps.receive.outputs.mainline-pkg }}
   build-release:
-    runs-on: manjaro-20.04
+    runs-on: ubuntu-20.04
     needs: [prepare-release]
-
     strategy:
-      fail-fast: false
       matrix:
-        experimental: [false]
-        # edition: [gnome, i3, xfce, awesome]
         edition: [awesome]
-        branch: [stable]
-        scope: [full]
-        kernel:
-          - ${{ needs.prepare-release.outputs.mainline }}
+        branch: [,stable]
+        scope: [full, minimal]
+        kernel: 
           - ${{ needs.prepare-release.outputs.longterm }}
-          - ${{ needs.prepare-release.outputs.stable }}
         include:
-          - kernel: ${{ needs.prepare-release.outputs.mainline }}
-            experimental: false
+          - edition: awesome
+            branch: unstable
+            scope: full
+            kernel: ${{ needs.prepare-release.outputs.stable }}
+            experimental: true
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
         with:
           access_token: ${{ github.token }}
+      - name: import awesome key
+        run: |
+          gpg --keyserver keys.openpgp.org --receive-keys ${{ secrets.GPG_KEYID }}
       - name: image-build-upload
-        uses: Manjaro/manjaro-iso-action@main
+        uses: Manjaro/manjaro-iso-action@v2.9
         with:
-          iso-profiles-repo: https://github.com/jfl3x/iso-profiles/
+          iso-profiles-repo: https://github.com/bittin/iso-profiles-1
           edition: ${{ matrix.edition }}
           branch: ${{ matrix.branch }}
           scope: ${{ matrix.scope }}
           kernel: ${{ matrix.kernel }}
           release-tag: ${{ needs.prepare-release.outputs.release_tag }}
+          additional-trusted-gpg: ${{ secrets.GPG_KEYID }}
       - name: rollback
         if: ${{ cancelled() }}
         run: |
