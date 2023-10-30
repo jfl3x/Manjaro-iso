@@ -36,7 +36,7 @@ jobs:
         # edition: [gnome, i3, xfce, awesome]
         edition: [awesome]
         branch: [stable]
-        scope: [full, minimal]
+        scope: [full]
         kernel:
           - ${{ needs.prepare-release.outputs.mainline }}
           - ${{ needs.prepare-release.outputs.longterm }}
