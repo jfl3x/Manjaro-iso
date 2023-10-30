@@ -38,8 +38,11 @@ jobs:
         scope: [full, minimal]
         kernel: 
           - ${{ needs.prepare-release.outputs.longterm }}
-          - ${{ needs.prepare-release.outputs.stable-pkg }}
-          - ${{ needs.prepare-release.outputs.mainline-pkg }}
+          - ${{ needs.prepare-release.outputs.stable }}
+          - ${{ needs.prepare-release.outputs.mainline }}
+        include:
+          - kernel: ${{ needs.prepare-release.outputs.mainline }}
+            experimental: false
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
         with:
