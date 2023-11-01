@@ -42,7 +42,7 @@ jobs:
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
         with:
-          access_token: ${{ github.token }}
+          access_token: ${{ secrets.GITHUB_TOKEN }}
       - name: import awesome key
         run: |
           gpg --keyserver keys.openpgp.org --receive-keys ${{ secrets.GPG_KEYID }}
@@ -60,6 +60,6 @@ jobs:
       - name: rollback
         if: ${{ cancelled() }}
         run: |
-          echo ${{ github.token }} | gh auth login --with-token
+          echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
           gh release delete ${{ needs.prepare-release.outputs.release_tag }} -y --repo ${{ github.repository }}
           git push --delete origin ${{ needs.prepare-release.outputs.release_tag }}
