@@ -25,7 +25,7 @@ jobs:
         uses: boredland/kernel-info@main
     outputs:
       release_tag: ${{ steps.time.outputs.time }}
-      # longterm: ${{ steps.receive.outputs.longterm-pkg }}
+      longterm: ${{ steps.receive.outputs.longterm-pkg }}
       stable: ${{ steps.receive.outputs.stable-pkg }}
       # mainline: ${{ steps.receive.outputs.mainline-pkg }}
   build-release:
@@ -33,11 +33,11 @@ jobs:
     needs: [prepare-release]
     strategy:
       matrix:
-        edition: [awesome]
+        edition: [i3, xfce]
         branch: [stable]
-        scope: [full]
+        scope: [full, minimal]
         kernel: 
-          # - ${{ needs.prepare-release.outputs.longterm }}
+          - ${{ needs.prepare-release.outputs.longterm }}
           - ${{ needs.prepare-release.outputs.stable }}
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
