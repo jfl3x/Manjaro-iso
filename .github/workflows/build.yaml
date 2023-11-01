@@ -25,8 +25,8 @@ jobs:
         uses: boredland/kernel-info@main
     outputs:
       release_tag: ${{ steps.time.outputs.time }}
-      longterm: ${{ steps.receive.outputs.longterm-pkg }}
-      # stable: ${{ steps.receive.outputs.stable-pkg }}
+      # longterm: ${{ steps.receive.outputs.longterm-pkg }}
+      stable: ${{ steps.receive.outputs.stable-pkg }}
       # mainline: ${{ steps.receive.outputs.mainline-pkg }}
   build-release:
     runs-on: ubuntu-20.04
@@ -37,8 +37,8 @@ jobs:
         branch: [stable]
         scope: [full]
         kernel: 
-          - ${{ needs.prepare-release.outputs.longterm }}
-          # - ${{ needs.prepare-release.outputs.stable }}
+          # - ${{ needs.prepare-release.outputs.longterm }}
+          - ${{ needs.prepare-release.outputs.stable }}
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
         with:
