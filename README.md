@@ -2,7 +2,26 @@
 
 [![iso_build](https://github.com/jfl3x/Manjaro-iso/actions/workflows/build.yaml/badge.svg?branch=main)](https://github.com/jfl3x/Manjaro-iso/actions/workflows/build.yaml)
 
- Custom build of Manjaro with `XFCE` and `i3` as Desktop Manager. It also contain this change from the default ISO : 
+Custom build of Manjaro with 
+
+## Official
+
+- [ ] Gnome
+- [ ] KDE (Plasma)
+- [x] XFCE
+
+## Community
+
+- [x] Awesome
+- [ ] Cinnamon
+- [ ] i3
+- [ ] Sway
+- [ ] Docker container
+- [ ] Budgie
+- [ ] mate
+
+
+as Desktop Manager. It also contain this change from the default ISO : 
 
  - [ ] Add software
    - [ ] ~~Visual Studio Code~~ (unavailable)
