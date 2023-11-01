@@ -33,11 +33,11 @@ jobs:
     needs: [prepare-release]
     strategy:
       matrix:
-        edition: [i3, xfce]
+        edition: [xfce]
         branch: [stable]
-        scope: [full, minimal]
+        scope: [full]
         kernel: 
-          - ${{ needs.prepare-release.outputs.longterm }}
+          # - ${{ needs.prepare-release.outputs.longterm }}
           - ${{ needs.prepare-release.outputs.stable }}
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
