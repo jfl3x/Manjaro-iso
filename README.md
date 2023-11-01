@@ -5,7 +5,7 @@
  Custom build of Manjaro with `XFCE` and `i3` as Desktop Manager. It also contain this change from the default ISO : 
 
  - [ ] Add software
-   - [ ] Visual Studio Code
+   - [ ] ~~Visual Studio Code~~ (unavailable)
    - [ ] ~~Firebase~~ (unavailable)
    - [ ] flameshot
    - [ ] Gimp
