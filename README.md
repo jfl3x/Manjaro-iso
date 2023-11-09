@@ -23,19 +23,19 @@ Custom build of Manjaro with
 
 as Desktop Manager. It also contain this change from the default ISO : 
 
- - [ ] Add software
+ - [X] Add software
    - [ ] ~~Visual Studio Code~~ (unavailable)
    - [ ] ~~Firebase~~ (unavailable)
-   - [ ] flameshot
-   - [ ] Gimp
-   - [ ] Wine
-   - [ ] Steam
-   - [ ] LibreOffice
-   - [ ] OpenShot
-   - [ ] Nano
-   - [ ] Openshot
-   - [ ] Audacity
-   - [ ] Blender
+   - [x] flameshot
+   - [x] Gimp
+   - [x] Wine
+   - [x] Steam
+   - [x] LibreOffice
+   - [x] OpenShot
+   - [x] Nano
+   - [x] Openshot
+   - [x] Audacity
+   - [x] Blender
 
 - [ ] Change wallpaper* 
 
@@ -44,11 +44,14 @@ as Desktop Manager. It also contain this change from the default ISO :
 - [ ] Change dock (still debating)
   - [ ] ~~[tin2](https://gitlab.com/o9000/tint2)~~ (choose `Cairo-Dock`)
   - [ ] ~~[Simdock](https://github.com/onli/simdock)~~ (choose `Cairo-Dock`)
-  - [ ] [Cairo-Dock](https://www.glx-dock.org/)
+  - [x] [Cairo-Dock](https://www.glx-dock.org/)
 
 - [ ] widget (maybe more...)
-  - [ ] [Conky](https://github.com/brndnmtthws/conky) (System monitor)
+  - [x] [Conky](https://github.com/brndnmtthws/conky) (System monitor)
   - [ ] ~~[Sunamu](https://github.com/NyaomiDEV/Sunamu) (Media controller)~~ (unavailable)
+
+- [ ] Fonts
+  - [ ] [NDot 45](https://fontstruct.com/fontstructions/show/1947061/ndot-45-inspired-by-nothing) 
 
 
 
