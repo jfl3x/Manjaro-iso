@@ -40,7 +40,7 @@ as Desktop Manager. It also contain this change from the default ISO :
 
 - [x] Change wallpaper* 
 
-  <img src="/image/wallpaper-spaceman.jpg" width="250">
+  <img src="/image/wallpaper-spaceman-framework.png" width="250">
 
 - [ ] widget (TBD ; not used yet)
   - [x] [Conky](https://github.com/brndnmtthws/conky) (System monitor)
@@ -51,7 +51,7 @@ as Desktop Manager. It also contain this change from the default ISO :
 
 
 
-> _**\* the wallpaper was found on this [website](https://wallpapershome.com%2Fart%2Fspace-planet-man-dog-4k-19737.html&psig=AOvVaw3FOxtZ--ElSF0FIYTkM0A7&ust=1698693882566000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMjVqIH-m4IDFQAAAAAdAAAAABAD) and greeter background from this [website](https://wallpapers.com/wallpapers/manjaro-3840-x-2160-ds4yu5wqd6c3nqp4.html)**_
+> _**\* the wallpaper was found on this [website](https://wallpapershome.com%2Fart%2Fspace-planet-man-dog-4k-19737.html&psig=AOvVaw3FOxtZ--ElSF0FIYTkM0A7&ust=1698693882566000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMjVqIH-m4IDFQAAAAAdAAAAABAD) and greeter background from this [website](https://wallpapers.com/wallpapers/manjaro-3840-x-2160-ds4yu5wqd6c3nqp4.html)** -- with a little mod in GIMP_
 
 
 > [personnal package are validated by this website](https://packages.manjaro.org/)
