@@ -50,7 +50,8 @@ jobs:
       - name: image-build-upload
         uses: Manjaro/manjaro-iso-action@main
         with:
-          iso-profiles-repo: https://github.com/jfl3x/iso-profiles.git#framework
+          iso-profiles-repo: https://github.com/jfl3x/iso-profiles
+          iso-profiles-branch: framework
           edition: ${{ matrix.edition }}
           branch: ${{ matrix.branch }}
           scope: ${{ matrix.scope }}
