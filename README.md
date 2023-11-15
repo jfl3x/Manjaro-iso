@@ -12,7 +12,7 @@ Custom build of Manjaro with
 
 ## Community
 
-- [x] Awesome
+- [ ] Awesome
 - [ ] Cinnamon
 - [ ] i3
 - [ ] Sway
@@ -26,6 +26,7 @@ as Desktop Manager. It also contain this change from the default ISO :
  - [X] Add software
    - [ ] ~~Visual Studio Code~~ (unavailable)
    - [ ] ~~Firebase~~ (unavailable)
+   - [ ] ~~Spotify~~ (unavailable)
    - [x] flameshot
    - [x] Gimp
    - [x] Wine
@@ -37,21 +38,16 @@ as Desktop Manager. It also contain this change from the default ISO :
    - [x] Audacity
    - [x] Blender
 
-- [ ] Change wallpaper* 
+- [x] Change wallpaper* 
 
   <img src="/image/wallpaper-spaceman.jpg" width="250">
 
-- [ ] Change dock (still debating)
-  - [ ] ~~[tin2](https://gitlab.com/o9000/tint2)~~ (choose `Cairo-Dock`)
-  - [ ] ~~[Simdock](https://github.com/onli/simdock)~~ (choose `Cairo-Dock`)
-  - [x] [Cairo-Dock](https://www.glx-dock.org/)
-
-- [ ] widget (maybe more...)
+- [ ] widget (TBD ; not used yet)
   - [x] [Conky](https://github.com/brndnmtthws/conky) (System monitor)
   - [ ] ~~[Sunamu](https://github.com/NyaomiDEV/Sunamu) (Media controller)~~ (unavailable)
 
-- [ ] Fonts
-  - [ ] [NDot 45](https://fontstruct.com/fontstructions/show/1947061/ndot-45-inspired-by-nothing) 
+- [x] Fonts
+  - [x] [NDot 45](https://fontstruct.com/fontstructions/show/1947061/ndot-45-inspired-by-nothing) 
 
 
 

@@ -33,7 +33,7 @@ jobs:
     needs: [prepare-release]
     strategy:
       matrix:
-        edition: [xfce, awesome]
+        edition: [xfce]
         branch: [stable]
         scope: [full]
         kernel: 
